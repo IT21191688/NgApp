@@ -1,0 +1,4 @@
+ Command Examples
+
+ //creating modules
+ ng g m security --route security --module app.module
