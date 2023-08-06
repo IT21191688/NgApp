@@ -7,6 +7,9 @@ import { ShareModule } from './modules/share/share.module';
 import { NotFoundComponent } from './core/not-found/not-found.component';
 import { MainFooterComponent } from './core/main-footer/main-footer.component';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
+import {AngularFireModule} from "@angular/fire/compat"
+import {AngularFireAuthModule} from "@angular/fire/compat/auth"
+import { environment } from 'src/environments/environment';
 
 @NgModule({
   declarations: [
@@ -18,7 +21,9 @@ import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
     BrowserModule,
     AppRoutingModule,
     ShareModule,
-    BrowserAnimationsModule
+    BrowserAnimationsModule,
+    AngularFireModule.initializeApp(environment.firebaseConfig), // Initialize Firebase with your config
+    AngularFireAuthModule
   ],
   providers: [],
   bootstrap: [AppComponent]
