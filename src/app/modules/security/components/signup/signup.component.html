@@ -1,1 +1,32 @@
-<p>signup works!</p>
+<form [formGroup]="signupForm" (ngSubmit)="signup()">
+    <div class="outer">
+        <div class="inner">
+        
+            <h4 style="text-align: center;">register</h4>
+    
+            <mat-form-field class="form-field" apearance="fill">
+                <mat-label>Email</mat-label>
+                <input formControlName="email" matInput type="email" placeholder="enter your email">
+            </mat-form-field>
+    
+    
+            <mat-form-field class="form-field" apearance="fill">
+                <mat-label>password</mat-label>
+                <input formControlName="password" matInput type="password" placeholder="enter your password">
+            </mat-form-field>
+    
+            <button mat-raised-button color="primary" type="submit" class="submit-login"
+             [disabled]="signupForm?.invalid">Register</button>
+    
+    
+             <hr>
+            <p class="text">Or</p>
+            
+            <button mat-raised-button type="submit" class="submit-login"
+            routerLink="/security/login">already have an account</button>
+   
+   
+
+        </div>
+    </div>
+    </form>

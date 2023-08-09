@@ -1,0 +1,31 @@
+<br>
+<form [formGroup]="expensesDataForm">
+<div class="container">
+    <div class="row">
+        <div class="col-3">
+            <div class="form-group">
+                <label for="id">Id</label>
+                <input (keyup.enter)="findData()" type="text" id="id" class="form-control" formControlName="id">
+            </div>
+        </div>
+        <div class="col-3">
+            <div class="form-group">
+                <label for="title">Title</label>
+                <input [disabled]="true" type="text" id="title" class="form-control" formControlName="title">
+            </div>
+        </div>
+        <div class="col-3">
+            <div class="form-group">
+                <label for="description">Description</label>
+                <input [disabled]="true" type="text" id="description" class="form-control" formControlName="description">
+            </div>
+        </div>
+        <div class="col-3">
+            <div class="form-group">
+                <label for="cost">Cost</label>
+                <input [disabled]="true" type="number" id="cost" class="form-control" formControlName="cost">
+            </div>
+        </div>
+    </div>
+</div>
+</form>

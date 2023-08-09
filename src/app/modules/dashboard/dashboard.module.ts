@@ -9,6 +9,12 @@ import { DashboardHeaderComponent } from './components/dashboard-header/dashboar
 import { ExpensesContextComponent } from './components/expenses-context/expenses-context.component';
 import { SalaryContextComponent } from './components/salary-context/salary-context.component';
 import { LoanContextComponent } from './components/loan-context/loan-context.component';
+import { MatButtonModule } from '@angular/material/button';
+import { NewExpensesDataComponent } from './components/expenses-context/items/new-expenses-data/new-expenses-data.component';
+import { ReactiveFormsModule } from '@angular/forms';
+import { FindExpensesDataComponent } from './components/expenses-context/items/find-expenses-data/find-expenses-data.component';
+import { UpdateExpensesDataComponent } from './components/expenses-context/items/update-expenses-data/update-expenses-data.component';
+import { LoadAllExpensesDataComponent } from './components/expenses-context/items/load-all-expenses-data/load-all-expenses-data.component';
 
 
 @NgModule({
@@ -19,11 +25,17 @@ import { LoanContextComponent } from './components/loan-context/loan-context.com
     DashboardHeaderComponent,
     ExpensesContextComponent,
     SalaryContextComponent,
-    LoanContextComponent
+    LoanContextComponent,
+    NewExpensesDataComponent,
+    FindExpensesDataComponent,
+    UpdateExpensesDataComponent,
+    LoadAllExpensesDataComponent
   ],
   imports: [
     CommonModule,
-    DashboardRoutingModule
+    DashboardRoutingModule,
+    MatButtonModule,
+    ReactiveFormsModule
   ]
 })
 export class DashboardModule { }

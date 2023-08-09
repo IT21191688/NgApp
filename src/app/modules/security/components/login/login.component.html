@@ -1,32 +1,32 @@
 <form [formGroup]="loginForm" (ngSubmit)="login()">
-<div class="outer">
-    <div class="inner">
-    
-        <h4 style="text-align: center;">Login</h4>
+    <div class="outer">
+        <div class="inner">
 
-        <mat-form-field class="form-field" apearance="fill">
-            <mat-label>Email</mat-label>
-            <input formControlName="email" matInput type="email" placeholder="enter your email">
-        </mat-form-field>
+            <h4 style="text-align: center;">Login</h4>
 
-
-        <mat-form-field class="form-field" apearance="fill">
-            <mat-label>password</mat-label>
-            <input formControlName="password" matInput type="password" placeholder="enter your password">
-        </mat-form-field>
-
-        <button mat-raised-button color="primary" type="submit" class="submit-login"
-         [disabled]="loginForm?.invalid">Login</button>
+            <mat-form-field class="form-field" apearance="fill">
+                <mat-label>Email</mat-label>
+                <input formControlName="email" matInput type="email" placeholder="enter your email">
+            </mat-form-field>
 
 
-         <hr>
-        <p class="text">Or Sign in with</p>
-         <div class="social-outer">
-            <button mat-fab (click)="GoogleAuth()" type="button">Google</button>
-            <button mat-fab>FB</button>
-            <button mat-fab>Git</button>
-            <button mat-fab>Twitter</button>
-         </div>
+            <mat-form-field class="form-field" apearance="fill">
+                <mat-label>password</mat-label>
+                <input formControlName="password" matInput type="password" placeholder="enter your password">
+            </mat-form-field>
+
+            <button mat-raised-button color="primary" type="submit" class="submit-login"
+                [disabled]="loginForm?.invalid">Login</button>
+
+
+            <hr>
+            <p class="text">Or Sign in with</p>
+            <div class="social-outer">
+                <button mat-fab (click)="GoogleAuth()" type="button">Google</button>
+                <button mat-fab>FB</button>
+                <button mat-fab>Git</button>
+                <button mat-fab routerLink="/security/signup">Reg</button>
+            </div>
+        </div>
     </div>
-</div>
 </form>

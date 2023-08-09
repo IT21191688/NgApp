@@ -1,1 +1,10 @@
-<p>expenses-context works!</p>
+<div style="padding: 10px;">
+    <div class="btn-group">
+        <a routerLink="/dashboard/process/expenses/new" class="btn btn-primary active" aria-current="page">New Expense</a>
+        <a routerLink="/dashboard/process/expenses/find" class="btn btn-primary">Find Expense By Id</a>
+        <a routerLink="/dashboard/process/expenses/update" class="btn btn-primary">Update</a>
+        <a routerLink="/dashboard/process/expenses/list" class="btn btn-primary">Load All</a>
+      </div>
+</div>
+<hr>
+<router-outlet></router-outlet>

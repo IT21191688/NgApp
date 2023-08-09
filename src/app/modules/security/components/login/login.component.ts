@@ -9,29 +9,26 @@ import { GoogleAuthProvider } from 'firebase/auth';
   styleUrls: ['./login.component.scss']
 })
 export class LoginComponent {
-  constructor(private auth: AngularFireAuth){
-  }
+
+  constructor(private auth: AngularFireAuth) {}
 
   GoogleAuth() {
-    return this.trigger(new GoogleAuthProvider());
+    const googleProvider = new GoogleAuthProvider();
+    return this.trigger(googleProvider);
   }
 
-
-   trigger(provider:any): any{
-    try{
-      return this.auth
-      .signInWithPopup(provider)
-      .then((result) => {
-        console.log(result);
-        
-        console.log('You have been successfully logged in!');
-      })
-      .catch((error) => {
-        console.log(error);
-      });
-    }catch(error){
+  trigger(provider: any): any {
+    try {
+      return this.auth.signInWithPopup(provider)
+        .then((result) => {
+          console.log(result);
+          console.log('You have been successfully logged in with Google!');
+        })
+        .catch((error) => {
+          console.log(error);
+        });
+    } catch (error) {
       console.log(error);
-      
     }
   }
 
@@ -41,8 +38,18 @@ export class LoginComponent {
   });
 
   login() {
-    console.log(this.loginForm.get('email')?.value);
-    console.log(this.loginForm.get('password')?.value);
-  }
+    const email = this.loginForm.get('email')?.value;
+    const password = this.loginForm.get('password')?.value;
 
+    /*
+    this.auth.signInWithEmailAndPassword(email, password)
+      .then(response => {
+        console.log('Successfully logged in with email and password:', response);
+      })
+      .catch(error => {
+        console.log('Error logging in:', error);
+      });
+  }
+  */
+  }
 }
